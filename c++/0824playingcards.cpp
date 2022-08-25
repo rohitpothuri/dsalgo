@@ -5,6 +5,7 @@ int main ()
     int N;
     cout<<"\nEnter size of Array: ";
     cin>>N;
+    
     if(N>12)
      throw std::invalid_argument( "Deck cannot have more than 13 cards" );
     
