@@ -5,8 +5,8 @@ using namespace std;
 
 int count_spaces(string s) {
   int count = 0;
-
-  for (int i = 0; i < s.size(); i++)
+  int sz = s.size();
+  for (int i = 0; i < sz; i++)
     if (s[i] == ' ') count++;
 
   return count;
