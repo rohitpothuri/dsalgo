@@ -5,7 +5,7 @@ int main ()
     int N;
     cout<<"\nEnter size of Array: ";
     cin>>N;
-    
+
     if(N>12)
      throw std::invalid_argument( "Deck cannot have more than 13 cards" );
     
@@ -38,7 +38,10 @@ int main ()
     cout<<"\nSorted list is \n";
     for(int i=0;i<N+1;i++)  
     {  
-        cout <<myarray[i]<<"\t";  
+        if(i==N-1)
+            cout <<myarray[i]<<"\t";
+        else
+        cout <<myarray[i];  
     } 
 
 }
