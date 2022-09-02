@@ -1,4 +1,4 @@
-Given an array of integers nums which is sorted in ascending order, and an integer target, write a function to search target in nums. If target exists, then return its index. Otherwise, return -1. You must write a program with O(log n) runtime complexity.
+Today is such a beautiful evening after heavy rainfall and kids decided to play in playground, then at the same moment they are deligthed to see the colors of Rainbow in the sky. They observe seven colors like Violet, Indigo,Blue,Green,Yellow,Orange,Red i.e 'V','I','B','G','Y','O','R'.Now your task is to remove a color which is mentioned above as input and display the remaining colors of Rainbow, if the color which you want to delete that is not comes under VIBGYOR then display message as "Color not available".
 
 Input Format
 
