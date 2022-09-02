@@ -8,7 +8,6 @@ int count_spaces(string s) {
   int sz = s.size();
   for (int i = 0; i < sz; i++)
     if (s[i] == ' ') count++;
-
   return count;
 }
 

@@ -1,20 +1,37 @@
-Today is such a beautiful evening after heavy rainfall and kids decided to play in playground, then at the same moment they are deligthed to see the colors of Rainbow in the sky. They observe seven colors like Violet, Indigo,Blue,Green,Yellow,Orange,Red i.e 'V','I','B','G','Y','O','R'.Now your task is to remove a color which is mentioned above as input and display the remaining colors of Rainbow, if the color which you want to delete that is not comes under VIBGYOR then display message as "Color not available".
+Write a program to find the sum of odd nodes and even nodes from a linked list.
 
 Input Format
 
-User will enter the character which is to be deleted. Example:- V
+Line 1: It contains number of nodes in the linked list
+Line 2: It contains space separated integer values for linked list
 
 Constraints
 
-Character entered by user must be in uppercase
+0<=n<=7
+where n is the total number of nodes
 
 Output Format
 
-It will print remaining colors of VIBGYOR Example:-IBGYOR But if color is Not available then it will print message as shown bellow:- Color not available
+If the number of input values are in between 0 and 7 then It will print the space separated output as sum of all the odd values, then print the sum of all even values of the linked list.
+Otherwise it will print "Invalid Range" message.
 
 Sample Input 0
 
-V
+5
+4 3 9 2 5
 Sample Output 0
 
-IBGYOR
+17 6 
+Explanation 0
+
+Sum of odd valued nodes= 3+9+5=17
+Sum of even valued nodes=4+2=6 
+So, Output is 17 6
+
+Sample Input 1
+
+12
+1 2 2 3 3 3 3 3 3 3 3 4 
+Sample Output 1
+
+Invalid Range
