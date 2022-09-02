@@ -54,7 +54,7 @@ public:
             head= head->next;
         }
         if(counter == 0)
-            count << "No odd numbeer present";
+            cout << "No odd number present";
         else
             cout << counter;
     }
@@ -85,7 +85,7 @@ int main()
         ssin >> x;
         if(x==-1)
             break;
-        else    
+        else if(x>-1)    
             a.add_node(x);
         
         ++i;
