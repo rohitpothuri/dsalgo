@@ -85,8 +85,8 @@ int main() {
     int n;
     cin>>n;     //Reading number of employees
 
-    if(n<1){
-        cout << "Number of employees should be greater than 0";
+    if(n<=0){
+        cout << "N > 0";
         return 0;
     }
   
