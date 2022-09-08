@@ -1,97 +1,57 @@
 #include <iostream>
 #include <ctype.h>
 #include <sstream>
-#include <bits/stdc++.h>
 using namespace std;
 
-struct node
+int count_spaces(string s)
 {
-    string data;
-    node *next;
-};
-
-class linked_list
+  int count = 0;
+  int sz = s.size();
+  for (int i = 0; i < sz; i++)
+    if (s[i] == ' ')
+      count++;
+  return count;
+}
+void swap(string *xp, string *yp)
 {
-private:
-    node *head,*tail;
-public:
-    linked_list()
-    {
-        head = NULL;
-        tail = NULL;
-    }
-
-    void add_node(string n)
-    {
-        node *tmp = new node;
-        tmp->data = n;
-        tmp->next = NULL;
-
-        if(head == NULL)
-        {
-            head = tmp;
-            tail = tmp;
-        }
-        else
-        {
-            tail->next = tmp;
-            tail = tail->next;
-        }
-    }
-
-    static string reverseStr(string str)
-    {
-        int len = str.length();
-        int n = len-1;
-        int i = 0;
-        while(i<=n){
-            swap(str[i],str[n]);
-            n = n-1;
-            i = i+1;
-        }
-        return str;
- 
-    }
-
-    node* gethead()
-    {
-        return head;
-    }
-    
-    static void checkPalindrome(node *head, int numElements)
-    {
-        string z;
-        while(head!=NULL)
-        {
-            
-            z=z + string (head->data);
-            head= head->next;
-        }
-        if(z==reverseStr(z)){
-            cout << "Yes";
-        }
-        else{
-            cout << "No";
-        }
-        
-    }
-};
-
+  string temp = *xp;
+  *xp = *yp;
+  *yp = temp;
+}
 int main()
 {
-    int n;
-    cin >> n;
-    if(n<5 || n>=15){
-      cout << "Invalid Input";
-      return 0;
-    }
-    linked_list a;
-    for(int i=0; i<n; i++){
-        string x;
-        cin>>x;
-        a.add_node(x);
+  int num;
+  cin >> num;
+  cin.ignore();
+  string str1;
+  getline(cin, str1);
 
+  string myarray[num];
+  int i = 0;
+  stringstream ssin(str1);
+  while (ssin.good() && i < num)
+  {
+    ssin >> myarray[i];
+    ++i;
+  }
+
+  int j, k;
+
+  // One by one move boundary of
+  // unsorted subarray
+  for (i = 0; i < num - 1; i++)
+  {
+    k = i;
+    for (j = i + 1; j < num; j++)
+    {
+      if (myarray[j] < myarray[k])
+        k = j;
+      if (k != i){
+        swap(&myarray[k], &myarray[i]);
+      }
+          
     }
-    linked_list::checkPalindrome(a.gethead(),n);
-    return 0;
+    
+  }
+  return 0;
 }
