@@ -3,55 +3,49 @@
 #include <sstream>
 using namespace std;
 
-int count_spaces(string s)
+int
+count_spaces (string s)
 {
   int count = 0;
-  int sz = s.size();
+  int sz = s.size ();
   for (int i = 0; i < sz; i++)
     if (s[i] == ' ')
       count++;
   return count;
 }
-void swap(string *xp, string *yp)
+
+void
+bubbleSort (int arr[], int n)
 {
-  string temp = *xp;
-  *xp = *yp;
-  *yp = temp;
+  int i, j;
+  for (i = 0; i < n - 1; i++)
+
+    // Last i elements are already
+    // in place
+    for (j = 0; j < n - i - 1; j++)
+      if (arr[j] > arr[j + 1])
+	swap (arr[j], arr[j + 1]);
 }
-int main()
+
+int
+main ()
 {
-  int num;
-  cin >> num;
-  cin.ignore();
   string str1;
-  getline(cin, str1);
+  getline (cin, str1);
 
-  string myarray[num];
+  int elements = count_spaces(str1) + 1;
+  int myarray[elements];
   int i = 0;
-  stringstream ssin(str1);
-  while (ssin.good() && i < num)
-  {
-    ssin >> myarray[i];
-    ++i;
-  }
-
-  int j, k;
-
-  // One by one move boundary of
-  // unsorted subarray
-  for (i = 0; i < num - 1; i++)
-  {
-    k = i;
-    for (j = i + 1; j < num; j++)
+  stringstream ssin (str1);
+  while (ssin.good () && i < elements)
     {
-      if (myarray[j] < myarray[k])
-        k = j;
-      if (k != i){
-        swap(&myarray[k], &myarray[i]);
-      }
-          
+      ssin >> myarray[i];
+      ++i;
     }
-    
-  }
+  bubbleSort(myarray, elements);
+  for (int j = 0; j < elements; j++)
+    {
+      cout << myarray[j] << endl;
+    }
   return 0;
 }
