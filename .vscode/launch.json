@@ -1,45 +1,17 @@
 {
     "configurations": [
-<<<<<<< HEAD
-<<<<<<< HEAD
         {
             "name": "C/C++: clang build and debug active file",
-=======
-
-        {
-            "name": "C/C++: g++ build and debug active file",
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
-=======
-
-        {
-            "name": "C/C++: g++ build and debug active file",
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
             "type": "cppdbg",
             "request": "launch",
             "program": "${fileDirname}/${fileBasenameNoExtension}",
             "args": [],
-<<<<<<< HEAD
-<<<<<<< HEAD
             "stopAtEntry": true,
-=======
-            "stopAtEntry": false,
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
-=======
-            "stopAtEntry": false,
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb",
-<<<<<<< HEAD
-<<<<<<< HEAD
             "preLaunchTask": "C/C++: clang build active file"
-=======
-            "preLaunchTask": "C/C++: g++ build active file"
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
-=======
-            "preLaunchTask": "C/C++: g++ build active file"
->>>>>>> 9d2b51915635d7ce8f799da34816c83a68eeda05
         }
     ],
     "version": "2.0.0"
