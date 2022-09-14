@@ -60,13 +60,18 @@ void append(struct Node** head_ref, int new_data)
  return;
 }
 
-void printList(struct Node* node)
+int printList(struct Node* node)
 {
+ if(node==NULL){
+  cout << "All elements deleted";
+  return 0;
+ }
  while (node != NULL) {
   cout << node->data << " ";
   node = node->next;
  }
  cout << endl;
+ return 0;
 }
 
 int
@@ -88,11 +93,18 @@ main ()
   getline (cin, str);
   int elements = count_spaces (str) + 1;
   if(elements!=1){
-    cout << " Wrong Input";
+    cout << "Wrong Input";
       return 0;
   }
-
-  int n = stoi(str);
+  int n;
+    try
+    {
+       n = stoi(str);
+    }
+    catch(...) {
+    cout << "Wrong Input";
+    return 0;
+  }   
 
   if(n<3 || n >=12){
       cout << n << " Wrong Input";
