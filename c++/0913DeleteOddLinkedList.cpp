@@ -70,11 +70,29 @@ void printList(struct Node* node)
 }
 
 int
+count_spaces (string s)
+{
+  int count = 0;
+  int sz = s.size ();
+  for (int i = 0; i < sz; i++)
+    if (s[i] == ' ')
+      count++;
+  return count;
+}
+
+int
 main ()
 {
 
-  int n;
-  cin >> n;
+  string str;
+  getline (cin, str);
+  int elements = count_spaces (str) + 1;
+  if(elements!=1){
+    cout << " Wrong Input";
+      return 0;
+  }
+
+  int n = stoi(str);
 
   if(n<3 || n >=12){
       cout << n << " Wrong Input";
