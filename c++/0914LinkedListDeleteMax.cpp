@@ -3,6 +3,7 @@
 #include <string>
 #include <algorithm>
 #include <sstream>
+#include <climits>
 using namespace std;
 
 struct Node
@@ -10,17 +11,6 @@ struct Node
   int data;
   struct Node *next;
 };
-
-int
-count_spaces (string s)
-{
-  int count = 0;
-  int sz = s.size ();
-  for (int i = 0; i < sz; i++)
-    if (s[i] == ' ')
-      count++;
-  return count;
-}
 
 void
 append (Node ** head_ref, int new_data)
@@ -127,7 +117,6 @@ main ()
   string str;
   getline (cin, str);
 
-  int elements = count_spaces (str) + 1;
   Node *head = NULL;
 
   int i = 0;

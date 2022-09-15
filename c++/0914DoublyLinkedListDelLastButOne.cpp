@@ -90,6 +90,11 @@ int main()
   int n = 0;
   scanf("%d", &n);
 
+  if(n<2 || n>20){
+    printf("%s","Invalid list size");
+    return 0;
+  }
+
   struct Node* head = NULL;
   for (int i = 0; i < n; i++)
     {
