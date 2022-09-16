@@ -90,7 +90,7 @@ int main()
   int n = 0;
   scanf("%d", &n);
 
-  if(n<2 || n>20){
+  if(n<=2 || n>20){
     printf("%s","Invalid list size");
     return 0;
   }
