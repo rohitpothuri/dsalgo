@@ -97,7 +97,7 @@ void DeleteAtIndex(struct Node** head, int index)
 		return;
 	}
 	if (index >= len || index < 0) {
-		cout << "Index is not Found";
+		cout << "N should always be less or equal to the nos. of node in the linked list.";
 		return;
 	}
 
