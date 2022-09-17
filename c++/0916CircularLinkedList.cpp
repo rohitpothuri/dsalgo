@@ -127,10 +127,15 @@ int main()
     cout << "Value should not be negative";
     return 0;
   }
-  //2 5 7 8 9 10 12
 
   int numElements;
   cin >> numElements;
+
+ if(N>=numElements){
+	cout << "Value should be less than number of elements";
+	return 0;
+ }
+
   if(numElements<1 || numElements>49){
     cout << "Value should between 1 and 49";
     return 0;
@@ -163,7 +168,8 @@ int main()
       }
       catch (std::exception & e)
       {
-	      //do nothing
+	      cout << "values should only be numbers";
+		  return 0;
       }
       ++i;
     }

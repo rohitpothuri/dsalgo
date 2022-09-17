@@ -11,13 +11,9 @@ struct Node
   struct Node *next;
 };
 
-// function to create and return a Node
 Node* getNode(int data)
 {
-    // allocating space
     Node* newNode = new Node();
-  
-    // inserting the required data
     newNode->data = data;
     newNode->next = NULL;
     return newNode;
@@ -25,31 +21,17 @@ Node* getNode(int data)
 
 void insertPos(Node** current, int pos, char data, int size)
 {
-    // This condition to check whether the
-    // position given is valid or not.
     if (pos < 1 || pos > size + 1)
         cout << "Invalid position!" << endl;
     else {
-  
-        // Keep looping until the pos is zero
         while (pos--) {
   
             if (pos == 0) {
-  
-                // adding Node at required position
                 Node* temp = getNode(data);
-  
-                // Making the new Node to point to 
-                // the old Node at the same position
                 temp->next = *current;
-  
-                // Changing the pointer of the Node previous 
-                // to the old Node to point to the new Node
                 *current = temp;
             }
             else
-              // Assign double pointer variable to point to the 
-              // pointer pointing to the address of next Node 
               current = &(*current)->next;
         }
         size++;
