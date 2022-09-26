@@ -104,6 +104,25 @@ int insertVowel(Node** head, int numElements, char data){
   return isInserted;
 }
 
+int checkAdjacentVowels(Node** head,int numElements ){
+  Node* current = *head;
+  int counter = 0;
+  while (counter < numElements-1){
+
+    char cur =  current->data;
+    Node *next = current->next;
+    char nextVal = next->data;
+
+    if(isVowel(cur) && isVowel(nextVal)){
+      return -1;
+    }
+    current = current->next;
+    counter ++;
+  }
+  return 0;
+
+}
+
 
 int insertConsonant(Node** head, int numElements, char data){
 
@@ -159,12 +178,24 @@ main ()
     }
     else{
       cout << "All characters in the node should be upper cased";
-      break;
       return 0;
+      break;
+      
     }
   }
   char y;
   cin >> y;
+  if (!isupper(y)){
+    cout << "Input should be upper case";
+    return 0;
+  }
+  int c = checkAdjacentVowels(&head, N);
+  if(c==-1){
+    cout << "Wrong input";
+    return 0;
+  }
+
+
   int z = -1;
   if(isVowel(y)){
     z = insertVowel(&head, N, y);
