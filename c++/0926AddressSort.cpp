@@ -28,6 +28,27 @@ public:
 		newnode->next = head;
 		head = newnode;
 	}
+    void append (string val1, int val2)
+    {
+        Node* newnode = new Node(val1, val2);
+        Node *last = head;
+        newnode->name = val1;
+        newnode->strength = val2;
+        newnode->next = NULL;
+        if (head == NULL)
+            {
+            head = newnode;
+            return;
+            }
+        while (last->next != NULL)
+            {
+            last = last->next;
+            }
+        last->next = newnode;
+        return;
+    }
+
+
 
 	void insertionSort(Node* headref)
 	{
@@ -78,6 +99,8 @@ int main()
         return 0;
     }
     int prevNumber = INT_MAX;
+    string lastName;
+    int lastStrength;
 
     for (int i = 0; i < N+1; ++i) {
         std::string s;
@@ -88,11 +111,16 @@ int main()
                 cout << "Invalid Input";
                 return 0;
             }
+          list.append(s,a);  
         }
-        list.push(s,a);
+        else if(i==N){
+            lastName = s;
+            lastStrength = a;
+        }
         prevNumber = a;
     }
     list.printlist(list.head);
+    list.append(lastName,lastStrength);
     list.insertionSort(list.head);
 	list.printlist(list.head);
 	
