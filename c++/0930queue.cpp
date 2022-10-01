@@ -30,8 +30,12 @@ int main()
         {
             cout << "values should only be numbers";
             return 0;
-        }
-        
+        }   
+    }
+
+    if(myqueue.size()<=2){
+        cout << "Invalid size";
+        return 0;
     }
 
 	while (!myqueue.empty()) {
