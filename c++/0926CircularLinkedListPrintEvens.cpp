@@ -65,58 +65,24 @@ int Length(struct Node* head)
 	return count;
 }
 
-void DeleteFirst(struct Node** head)
+void DisplayEvens(struct Node* head, int size)
 {
-    struct Node *previous = *head, *next = *head;
-    if (*head == NULL) {
-        printf("\nList is empty\n");
-        return;
-    }
-    if (previous->next == previous) {
-        *head = NULL;
-        return;
-    }
-    while (previous->next != *head) {
- 
-        previous = previous->next;
-        next = previous->next;
-    }
-    previous->next = next->next;
-    *head = previous->next;
-    free(next);
-    return;
-}
+	struct Node* current = head;
+	int currentLoop = 1;
+	for(int i=0; i<size; i++){
 
-void DeleteAtIndex(struct Node** head, int index)
-{
-	int len = Length(*head);
-	int count = 1;
-	struct Node *previous = *head, *next = *head;
-	if (*head == NULL) {
-		cout << "Delete Last List is empty";
+		if (head == NULL) {
+		printf("List is empty");
 		return;
 	}
-	if (index >= len || index < 0) {
-		cout << "N should always be less or equal to the nos. of node in the linked list.";
-		return;
-	}
+		do {
+			cout << current->data << " ";
+			current = current->next;
+		} while (current != head);
 
-	if (index == 0) {
-		DeleteFirst(head);
-		return;
+    cout << endl;
+
 	}
-	while (len > 0) {
-		if (index == count) {
-			previous->next = next->next;
-			free(next);
-			return;
-		}
-		previous = previous->next;
-		next = previous->next;
-		len--;
-		count++;
-	}
-	return;
 }
 
 int main()
@@ -152,8 +118,10 @@ int main()
     }
 	if(oddExists==-1 || evenExists ==-1){
 		cout << "There should be at least one odd and even integer value in the list";
-    	return 0;
+		return 0;
 	}
+
+
 	//DeleteAtIndex(&head, N);
 	Display(head);
 	return 0;
