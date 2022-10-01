@@ -3,7 +3,6 @@
 using namespace std;
 
 bool checkExpress(string str){
-    int i;
 	int N = str.length();
 
 	if(N<=0){
