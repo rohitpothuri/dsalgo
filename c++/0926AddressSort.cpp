@@ -22,12 +22,12 @@ public:
 	Node* head;
 	Node* sorted;
 
-	void push(string val1, int val2)
+	/* void push(string val1, int val2)
 	{
 		Node* newnode = new Node(val1, val2);
 		newnode->next = head;
 		head = newnode;
-	}
+	} */
     void append (string val1, int val2)
     {
         Node* newnode = new Node(val1, val2);
