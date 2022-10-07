@@ -1,51 +1,48 @@
-#include <iostream>
 #include <cmath>
+#include <cstdio>
 #include <vector>
-#include <queue>
-
+#include <stack>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 
-void solve(vector<int> arr, int n)
-{
-
-  int t = n, i;
-
-  priority_queue<int> p;
-
-  for (i = 0; i < n; i++)
-
-  {
-
-    p.push(arr[i]);
-
-    while (p.top() == t)
-
-    {
-
-      cout << p.top() << " ";
-
-      p.pop();
-
-      t--;
+void transfer(stack<long>& from, stack<long>& to){
+    while(from.empty()==false){
+        to.push(from.top()); 
+        from.pop(); 
     }
-
-    cout << "\n";
-  }
 }
 
-int main()
-{
-
-  int N;
-  cin >> N;
-
-  vector<int> arr(N);
-
-  for (int i_arr = 0; i_arr < N; i_arr++)
-  {
-
-    cin >> arr[i_arr];
-  }
-
-  solve(arr, N);
+int main() {
+    stack<long> outs; 
+    stack<long> ins; 
+    
+    int N; 
+    cin >> N; 
+    for(int i=0; i<N; i++){
+        int type; 
+        long param; 
+        cin >> type; 
+        switch(type){
+            case 1:
+                cin >> param; 
+                ins.push(param); 
+                break; 
+            case 2:
+                if (outs.empty()){
+                    transfer(ins, outs); 
+                }
+                outs.pop(); 
+                break; 
+            case 3:
+                if (outs.empty()){
+                    transfer(ins, outs); 
+                }
+                cout << outs.top() << endl; 
+                break; 
+            default: 
+                break; 
+        }
+    }
+    return 0;
 }

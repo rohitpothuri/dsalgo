@@ -33,7 +33,8 @@
         "__functional_03": "cpp",
         "algorithm": "cpp",
         "queue": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "1006queue2cpp": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
