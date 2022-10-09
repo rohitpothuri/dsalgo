@@ -9,7 +9,8 @@ using namespace std;
  
 void reverseQueueFirstKElements(int k, queue<int>& Queue)
 {
-    if (Queue.empty() == true || k > Queue.size())
+    int qSize = Queue.size();
+    if (Queue.empty() == true || k > qSize)
         return;
     if (k <= 0)
         return;
@@ -25,7 +26,7 @@ void reverseQueueFirstKElements(int k, queue<int>& Queue)
         Stack.pop();
     }
  
-    for (int i = 0; i < Queue.size() - k; i++) {
+    for (int i = 0; i < qSize - k; i++) {
         Queue.push(Queue.front());
         Queue.pop();
     }
