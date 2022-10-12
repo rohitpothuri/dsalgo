@@ -89,7 +89,6 @@ void Queue::displayQueue()
     return;
 }
 
-/* Driver of the program */
 int main()
 {
 	Queue q(7);
@@ -118,30 +117,4 @@ int main()
             }
       }
       return 0;
-
-
-
-	/* // Inserting elements in Circular Queue
-	q.enQueue(14);
-	q.enQueue(22);
-	q.enQueue(13);
-	q.enQueue(-6);
-
-	// Display elements present in Circular Queue
-	q.displayQueue();
-
-	// Deleting elements from Circular Queue
-	printf("\nDeleted value = %d", q.deQueue());
-	printf("\nDeleted value = %d", q.deQueue());
-
-	q.displayQueue();
-
-	q.enQueue(9);
-	q.enQueue(20);
-	q.enQueue(5);
-
-	q.displayQueue();
-
-	q.enQueue(20); */
-	return 0;
 }
