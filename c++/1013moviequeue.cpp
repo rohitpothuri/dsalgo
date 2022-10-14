@@ -18,7 +18,7 @@ int main()
     }
 
     if(people>seats){
-        cout << "Housefull";
+        cout << "Houseful";
         return 0;
     }
     else{
