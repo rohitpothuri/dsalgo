@@ -61,8 +61,8 @@ void reverse(char str[])
 int main()
 {
 
-	char str[100] = "";
-    cin.getline(str,100);
+	char str[0] = "";
+    cin.getline(str,30);
 	reverse(str);
 	cout<< str;
 	return 0;
