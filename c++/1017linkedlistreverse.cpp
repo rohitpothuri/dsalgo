@@ -1,4 +1,4 @@
-/* #include <bits/stdc++.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -120,4 +120,4 @@ int main()
     fout.close();
 
     return 0;
-} */
+}

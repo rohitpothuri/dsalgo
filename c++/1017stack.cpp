@@ -1,123 +1,30 @@
-/* #include <bits/stdc++.h>
-
+#include <cmath>
+#include <string>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include<stack>
 using namespace std;
 
-class SinglyLinkedListNode {
-    public:
-        int data;
-        SinglyLinkedListNode *next;
 
-        SinglyLinkedListNode(int node_data) {
-            this->data = node_data;
-            this->next = nullptr;
+int main() {
+    stack<string> stack;
+    string k;
+    int c , n;
+    cin>>c;
+    while(c == 1){
+        cin>>n;
+        for(int i = 0;i<n;i++){
+            cin>>k;
+            stack.push(k);
         }
-};
-
-class SinglyLinkedList {
-    public:
-        SinglyLinkedListNode *head;
-        SinglyLinkedListNode *tail;
-
-        SinglyLinkedList() {
-            this->head = nullptr;
-            this->tail = nullptr;
-        }
-
-        void insert_node(int node_data) {
-            SinglyLinkedListNode* node = new SinglyLinkedListNode(node_data);
-
-            if (!this->head) {
-                this->head = node;
-            } else {
-                this->tail->next = node;
-            }
-
-            this->tail = node;
-        }
-};
-
-void print_singly_linked_list(SinglyLinkedListNode* node, string sep, ofstream& fout) {
-    while (node) {
-        fout << node->data;
-
-        node = node->next;
-
-        if (node) {
-            fout << sep;
-        }
+        cin>>c;
     }
-}
-
-void free_singly_linked_list(SinglyLinkedListNode* node) {
-    while (node) {
-        SinglyLinkedListNode* temp = node;
-        node = node->next;
-
-        free(temp);
+    cout<<stack.top()<<endl;
+    stack.pop();
+    while(!stack.empty()){
+        cout<<stack.top()<<' ';
+        stack.pop();
     }
-}
-
-/*
- * Complete the 'reverse' function below.
- *
- * The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
- * The function accepts INTEGER_SINGLY_LINKED_LIST llist as parameter.
- */
-
-/*
- * For your reference:
- *
- * SinglyLinkedListNode {
- *     int data;
- *     SinglyLinkedListNode* next;
- * };
- *
- */
-
-SinglyLinkedListNode* reverse(SinglyLinkedListNode* llist) {
-SinglyLinkedListNode*rHead =NULL;
-    while(llist != NULL){
-        SinglyLinkedListNode* node = new SinglyLinkedListNode(llist->data);
-        node->next = rHead;
-        rHead = node;
-        
-        llist = llist->next;
-    }
-    return rHead;
-}
-
-int main()
-{
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    int tests;
-    cin >> tests;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    for (int tests_itr = 0; tests_itr < tests; tests_itr++) {
-        SinglyLinkedList* llist = new SinglyLinkedList();
-
-        int llist_count;
-        cin >> llist_count;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-        for (int i = 0; i < llist_count; i++) {
-            int llist_item;
-            cin >> llist_item;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-            llist->insert_node(llist_item);
-        }
-
-        SinglyLinkedListNode* llist1 = reverse(llist->head);
-
-        print_singly_linked_list(llist1, " ", fout);
-        fout << "\n";
-
-        free_singly_linked_list(llist1);
-    }
-
-    fout.close();
-
     return 0;
-} */
+}
