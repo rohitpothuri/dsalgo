@@ -29,7 +29,6 @@ int main()
        }
        cout << endl;
 
-
     }
 
     cout << f1cars.front();
