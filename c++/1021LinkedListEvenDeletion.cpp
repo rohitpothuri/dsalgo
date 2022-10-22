@@ -136,7 +136,7 @@ main ()
     printList (head);
   }
   else{
-    cout << "No odd number present";
+    cout << "No even number present";
   }
   return 0;
 
