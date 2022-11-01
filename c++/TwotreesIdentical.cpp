@@ -3,72 +3,42 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+
 using namespace std;
-
-int count = 0;
-class node
+int main()
 {
-public:
-    int data;
-    node* left= NULL;
-    node* right = NULL;
-    node(int d)
+    int n1, n2, flag =0;
+    cin>>n1;
+    int arr1[n1];
+    for(int i =0;i<n1;i++)
     {
-        this->data = d;
+        cin>>arr1[i];
     }
-};
-node*root = NULL;
-void insert(int d)
-{
-    node *new_node = new node(d);
-    if(root == NULL)
+    cin>>n2;
+    int arr2[n2];
+    for(int i=0;i<n2;i++)
     {
-        root = new_node;
-    }else
+        cin>>arr2[i];
+    }
+    if(n1 == n2)
     {
-        node *ptr = root;
-        node *parent = NULL;
-        while(ptr)
+        for(int i=0;i<n1;i++)
         {
-            if(ptr->data > d)
-            {            parent = ptr;
-                ptr = ptr->left;
-            }
-            else
+            if(arr1[i]!=arr2[i])
             {
-                parent = ptr;
-                ptr = ptr->right;
+                flag = 1;
+                cout<<"Both trees are not identical";
+                break;
             }
         }
-        if(parent->data > d)
+        if(flag == 0)
         {
-            parent->left = new_node;
-        }
-        else
-        {
-            parent->right = new_node;
+            cout<<"Both trees are identical";
         }
     }
-}
-
-void inorder(node *ptr)
-{
-    cout<<ptr->data;
-}
-int main() 
-{
-    int n,d;
-    cin>>n;
-    if(n<= 2 || n>10)
+    else
     {
-        cout<<"Invalid Size";
-        return 0;
+        cout<<"Both trees are not identical";
     }
-    for(int i=0;i<n;i++)
-    {
-        cin>>d;
-        insert(d);
-    }
-    inorder(root);
     return 0;
 }
