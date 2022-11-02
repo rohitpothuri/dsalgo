@@ -1,5 +1,7 @@
 #include<iostream>
+#include <vector>
 using namespace std;
+std::vector< int > arr;
 struct node {
    int data;
    struct node *left;
@@ -13,7 +15,7 @@ struct node *createNode(int val) {
 }
 void preorder(struct node *root) {
    if (root != NULL) {
-      cout<<root->data<<" ";
+      arr.push_back(root->data);
       preorder(root->left);
       preorder(root->right);
    }
@@ -28,13 +30,24 @@ struct node* insertNode(struct node* node, int val) {
 }
 int main() {
    struct node *root = NULL;
-   root = insertNode(root, 4);
-   insertNode(root, 5);
-   insertNode(root, 2);
-   insertNode(root, 9);
-   insertNode(root, 1);
-   insertNode(root, 3);
-   cout<<"Pre-Order traversal of the Binary Search Tree is: ";
+    int n,d;
+    cin>>n;
+    if(n<= 2 || n>10)
+    {
+        cout<<"Invalid Size";
+        return 0;
+    }
+    for(int i=0;i<n;i++)
+    {
+        cin>>d;
+        if(i==0){
+            root = insertNode(root, d);
+        }
+        else{
+            insertNode(root, d);
+        }
+    }
    preorder(root);
+   cout << arr[1];
    return 0;
 }
