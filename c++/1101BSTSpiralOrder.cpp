@@ -73,8 +73,7 @@ struct node* insertNode(struct node* node, int val) {
    return node;
 }
 
- 
-// Driver code
+
 int main()
 {
     struct node* root = NULL;
@@ -96,8 +95,6 @@ int main()
             insertNode(root, d);
         }
     }
-    
-    printf("Spiral Order traversal of binary tree: ");
  
     printSpiral(root);
  
