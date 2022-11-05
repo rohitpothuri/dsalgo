@@ -1,65 +1,60 @@
 #include<iostream>
 using namespace std;
-struct node {
-    int data;
-    struct node* left;
-    struct node* right;
+struct node{
+    int info;
+    struct node *left,*right;
 };
 
-struct node *createNode(int val) {
-   struct node *temp = (struct node *)malloc(sizeof(struct node));
-   temp->data = val;
-   temp->left = temp->right = NULL;
-   return temp;
-}
+struct node *root = NULL;
 
-struct node* insertNode(struct node* node, int val) {
-   if (node == NULL) return createNode(val);
-   if (val < node->data)
-   node->left = insertNode(node->left, val);
-   else if (val > node->data)
-   node->right = insertNode(node->right, val);
-   return node;
-}
-
-int maxDepth(node* node)
-{
-    if (node == NULL)
-        return 0;
-    else {
-        /* compute the depth of each subtree */
-        int lDepth = maxDepth(node->left);
-        //int rDepth = maxDepth(node->right);
- 
-        /* use the larger one */
-        lDepth = lDepth + 1 ;
-        return lDepth;
+void insertion(){
+    struct node *n = new node,*ptr = root,*par = NULL;
+    cin>>n->info;
+    n->left = NULL;
+    n->right = NULL;
+    if(root == NULL){
+        root = n;
+        return;
     }
-} 
-
-
-int main()
-{
-    struct node* root = NULL;
-    int n,d;
-    cin>>n;
-    if(n< 3 || n>12)
-    {
-        cout<<"Enter correct range";
-        return 0;
-    }
-    for(int i=0;i<n;i++)
-    {
-        cin>>d;
-        if(i==0){
-            root = insertNode(root, d);
+    while(ptr != NULL){
+        par = ptr;
+        if(n->info < ptr->info){
+            ptr = ptr->left;
         }
         else{
-            insertNode(root, d);
+            ptr = ptr->right;
         }
     }
- 
-    cout << maxDepth(root);
- 
+    if(par->info > n->info){
+        par->left = n;
+    }
+    else{
+        par->right = n;
+    }
+}
+
+void Inorder(struct node *p, int *cou){
+    int count = *cou;
+    if(p != NULL){
+        Inorder(p->left, &count);
+        count++;
+        Inorder(p->right, &count);
+    }
+    *cou = count;
+}
+
+int main(){
+    int n, c = 0;
+    cin>>n;
+    if(n>3 && n<=12){
+        for(int i = 0;i < n;i++){
+            insertion();
+        }
+        Inorder(root->left, &c);
+        cout<<c;
+    }
+    else{
+        cout<<"Enter correct range";
+    }
     return 0;
-}     
+}
