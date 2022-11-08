@@ -74,7 +74,7 @@ int main(){
         cout << x << " ";
     }
     else{
-        cout<<"Enter correct range";
+        return 0;
     }
     return 0;
 }
