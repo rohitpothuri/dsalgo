@@ -72,7 +72,7 @@ int distanceBetween2(struct node* root, int a, int b)
         return 0;           
 }
 
-int findDistWrapper(node *root, int a, int b)
+int findDistWrapper(struct node* root, int a, int b)
 {
    //if (a > b)
      //swap(a, b);
@@ -106,7 +106,6 @@ int main()
         return 0;
     }
 
-	// print inoder traversal of the BST
-
 	return 0;
 }
+
